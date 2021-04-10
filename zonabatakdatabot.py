@@ -29,7 +29,7 @@ updater = Updater(token=TOKEN, use_context=True)
 dispatcher = updater.dispatcher 
 
 def Start(update, context):
-    data = '/notif\
+    data = '/zonabatakdatabot\
     \nSilahkan isi form dibawah\n\n• *Biodata Diri*\n Nama :\n Marga/boru :\n Mamak boru :\n Tempat tgl lahir :\n Kota Asal :\n Kota Sekarang :\n\n• *Media Sosial*(boleh ditambah)\n Instagram :\n\n• *Pesan* (jika ada)\n...\n\n@zonabatak @zonabatakid'
     update.message.reply_text(data, parse_mode=ParseMode.MARKDOWN)
 
@@ -41,7 +41,7 @@ def SendToCreator(update, context):
     name = update.effective_message.from_user.first_name
     msg = update.effective_message
     text = update.effective_message.text
-    frst = text.replace("/notif", "")
+    frst = text.replace("/zonabatakdatabot", "")
     scn = frst.replace("Silahkan isi form dibawah", "")
     abc = scn.replace("(boleh ditambah)", "")
     zb = abc.replace("(jika ada)", "")
@@ -58,7 +58,7 @@ def Log(update, context):
 
 start_handler = CommandHandler("start", Start)
 reply_handler = CommandHandler("reply", Reply)
-feedback_handler = CommandHandler("notif", SendToCreator)
+feedback_handler = CommandHandler("zonabatakdatabot", SendToCreator)
 logger_handler = CommandHandler("log", Log)
 
 dispatcher.add_handler(start_handler)
